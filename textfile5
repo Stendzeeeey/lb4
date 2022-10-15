@@ -1,0 +1,24 @@
+Дан файл в котором записано неск натуральны чисел. Посчитать ср арифметичское чисел в файле. Массивы - запрещаются. Открывать файл 1 раз.
+#include "pt4.h"
+#include <fstream>
+using namespace std;
+
+void Solve()
+{
+    Task("TextFile5");
+    float sum = 0;
+    int N;
+    int k = 0;
+    ifstream fin;
+    fin.open("a.num");
+    while (!fin.eof()) {
+        fin >> N;
+        ++k;  
+        if (k > 0) {
+            sum += N;
+        }
+    }
+    pt << sum / k;
+  
+    fin.close();
+}
