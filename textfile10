@@ -1,2 +1,31 @@
-
+1. Среди отрезка [a;b] найти числа, у которых первая и последняя цифра одинакова. Вывести их в файл, по одному числу в строке.
+#include "pt4.h"
+#include <fstream>
+using namespace std;
+int func(int x)
+{
+	int c, y;
+	c = x % 10;
+	while (x > 0)
+	{
+		y = x % 10;
+		x /= 10;
+	}
+	return (y == c);
+}
+void Solve()
+{
+    Task("TextFile10");
+	ofstream file;
+	file.open("b.dat");
+	int a, b;
+	pt >> a >> b;
+	for (a; a <= b; a++)
+	{
+		if (func(a))
+		{
+			file << a << endl;
+		}
+	}
+}
 	
